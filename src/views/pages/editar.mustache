@@ -1,0 +1,20 @@
+<form action="/editar/{{id}}" method="POST">
+
+   <h2>Editar Produto: <br></h2> 
+
+    <label for="nome">nome:</label>
+    <input type="text" name="nome" id="nome"  value="{{product.nome}}">
+
+    <label for="valor">Valor:</label>
+    <input type="number" min="0" max="100" name="valor" id="valor" step="any" value="{{product.valor}}">
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" name="quantidade" id="quantidade" value="{{product.quantidade}}">
+
+    <input type="submit" value="salvar alterações">
+
+    <br><a href="/produtos">Clique aqui </a> para voltar para a página de produtos
+
+</form>
+
+{{>partials/footer}}
