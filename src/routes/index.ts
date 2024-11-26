@@ -1,6 +1,7 @@
 import { Router } from "express"
 import * as produtoController from '../controllers/produtoController'
 
+
 const router = Router()
 
 router.get('/',(req,res) =>{
@@ -16,5 +17,7 @@ router.post('/cadastrar',produtoController.cadastroProduto)
 router.get('/editar/:id',produtoController.editaProduto)
 
 router.post('/editar/:id',produtoController.atualizarProduto)
+
+router.get('/excluir/:id',produtoController.deletarProduto);
 
 export default router

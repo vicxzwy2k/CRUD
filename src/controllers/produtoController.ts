@@ -1,5 +1,6 @@
 import {Request, Response} from 'express'
 import {Produto} from '../models/Produto'
+import { where } from 'sequelize'
 
 export const index = async (req: Request, res:Response) =>{
 
@@ -49,4 +50,24 @@ export const atualizarProduto = async(req:Request, res:Response) =>{
     })
     res.redirect('/produtos')
 }
+
+
+
+export const deletarProduto = async (req: Request, res: Response) => {
+
+    let { id } = req.params;  // Pegando o id do produto da URL
+  
+      // Deleta o produto baseado no ID
+      const produtoDeletado = await Produto.destroy({
+        where: {
+          id: id  // Condição para deletar o produto com o ID fornecido
+        }
+      });
+
+
+    res.redirect('/produtos');  // Redireciona para a lista de produtos após a deleção
+};
+  
+
+
 
