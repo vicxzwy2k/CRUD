@@ -1,5 +1,6 @@
 import { Router } from "express"
 import * as produtoController from '../controllers/produtoController'
+import * as authController from '../controllers/authController'
 
 
 const router = Router()
@@ -18,6 +19,10 @@ router.get('/editar/:id',produtoController.editaProduto)
 
 router.post('/editar/:id',produtoController.atualizarProduto)
 
-router.get('/excluir/:id',produtoController.deletarProduto);
+router.get('/excluir/:id',produtoController.deletarProduto)
+
+router.get('/usuario',authController.usuario)
+
+
 
 export default router

@@ -29,3 +29,6 @@ export const Produto = sequelize.define<ProdutoInstance>("Produto,",{
     tableName:'produtos',
     timestamps:false
 })
+
+
+
